@@ -21,5 +21,7 @@ HEADERS += DefaultPainter.h
 SOURCES += DefaultPainter.cpp
 HEADERS += Polygon.h
 SOURCES += Polygon.cpp
+HEADERS += Route.h
+SOURCES += Route.cpp
 
 LIBS += S2/libsphere.a
