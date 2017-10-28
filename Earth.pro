@@ -1,4 +1,4 @@
-QT = core gui widgets
+QT = core gui widgets opengl
 TEMPLATE = app
 TARGET = map-bin
 INCLUDEPATH += S2
@@ -19,3 +19,7 @@ HEADERS += ShapeLoader.h
 SOURCES += ShapeLoader.cpp
 HEADERS += DefaultPainter.h
 SOURCES += DefaultPainter.cpp
+HEADERS += Polygon.h
+SOURCES += Polygon.cpp
+
+LIBS += S2/libsphere.a
