@@ -1,4 +1,4 @@
-QT = core
+QT = core gui
 TEMPLATE = app
 TARGET = map-bin
 
@@ -8,3 +8,5 @@ HEADERS += TreeModel.h
 SOURCES += TreeModel.cpp
 HEADERS += GeoModel.h
 SOURCES += GeoModel.cpp
+HEADERS += AbstractPainter.h
+SOURCES += AbstractPainter.cpp
