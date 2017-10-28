@@ -28,3 +28,4 @@ HEADERS += GeoView.h
 SOURCES += GeoView.cpp
 
 LIBS += S2/libsphere.a
+LIBS += -lGLU
