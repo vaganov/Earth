@@ -78,8 +78,8 @@ bool ShapeLoader::load() {
         }
     }
 
-    qRegisterMetaType(QPolygonF);
-    qRegisterMetaType(QList<QPolygonF>);
+    qRegisterMetaType<QPolygonF>();
+    qRegisterMetaType<QList<QPolygonF> >();
 
     QModelIndex idx1;
 //  idx1 = model->addRow();
