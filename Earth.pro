@@ -16,3 +16,5 @@ HEADERS += AbstractLoader.h
 SOURCES += AbstractLoader.cpp
 HEADERS += ShapeLoader.h
 SOURCES += ShapeLoader.cpp
+HEADERS += DefaultPainter.h
+SOURCES += DefaultPainter.cpp
