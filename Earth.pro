@@ -1,6 +1,7 @@
 QT = core gui widgets
 TEMPLATE = app
 TARGET = map-bin
+INCLUDEPATH += S2
 
 SOURCES += main.cpp
 HEADERS += metatype.h
