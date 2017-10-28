@@ -23,5 +23,8 @@ HEADERS += Polygon.h
 SOURCES += Polygon.cpp
 HEADERS += Route.h
 SOURCES += Route.cpp
+HEADERS += value.h
+HEADERS += GeoView.h
+SOURCES += GeoView.cpp
 
 LIBS += S2/libsphere.a
