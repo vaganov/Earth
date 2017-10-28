@@ -81,14 +81,12 @@ bool ShapeLoader::load() {
     qRegisterMetaType<QPolygonF>();
     qRegisterMetaType<QList<QPolygonF> >();
 
-    QModelIndex idx1;
-//  idx1 = model->addRow();
+    QModelIndex idx1 = model->addRow();
     model->setData(idx1, "Страны");
     model->setData(idx1, Qt::Checked, Qt::CheckStateRole);
 
     foreach (QString name, borders.keys()) {
-        QModelIndex idx2;
-//      idx2 = model->addRow(idx1);
+        QModelIndex idx2 = model->addRow(idx1);
         model->setData(idx2, name);
         model->setData(idx2, Qt::Checked, Qt::CheckStateRole);
         QList<QPolygonF> list;
@@ -100,7 +98,7 @@ bool ShapeLoader::load() {
         }
         QVariant variant;
         variant.setValue< QList<QPolygonF> >(list);
-//      model->setData(idx2, variant, LandRole);
+        model->setData(idx2, variant, ContourPolygonRole);
     }
 /*
     QModelIndex idx2 = model->addRow(idx1);

@@ -197,6 +197,24 @@ void TreeModel::free (TreeNode* node) {
     delete node;
 }
 
+QModelIndex TreeModel::addRow(const QModelIndex& parent) {
+    TreeNode* node;
+    if (parent == QModelIndex()) {
+        node = root;
+    }
+    else {
+        node = (TreeNode*) parent.internalPointer();
+        node = node->children[parent.row()];
+    }
+    int row = node->children.size();
+    beginInsertRows(parent, row, row);
+    TreeNode* child = new TreeNode;
+    child->parent = node;
+    node->children.append(child);
+    endInsertRows();
+    return createIndex(row, 0, node);
+}
+
 QModelIndex TreeModel::find(const QVariant &value,
         const QModelIndex &parentIndex, int role, bool recursive) {
 
