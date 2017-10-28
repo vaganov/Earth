@@ -10,3 +10,5 @@ HEADERS += GeoModel.h
 SOURCES += GeoModel.cpp
 HEADERS += AbstractPainter.h
 SOURCES += AbstractPainter.cpp
+HEADERS += AbstractLoader.h
+SOURCES += AbstractLoader.cpp
