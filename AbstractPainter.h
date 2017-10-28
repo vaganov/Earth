@@ -10,6 +10,7 @@ public:
     AbstractPainter();
     AbstractPainter(TreeModel *model);
     AbstractPainter(const AbstractPainter &copy);
+    virtual ~AbstractPainter();
     TreeModel *model();
     void setModel(TreeModel *model);
     virtual void country(QModelIndex &parentIndex, QPolygonF polygon) = 0;

@@ -15,6 +15,9 @@ AbstractPainter::AbstractPainter(const AbstractPainter &copy) {
     m = copy.m;
 }
 
+AbstractPainter::~AbstractPainter() {
+}
+
 TreeModel *AbstractPainter::model() {
 
     return m;
