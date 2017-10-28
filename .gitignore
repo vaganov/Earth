@@ -3,3 +3,4 @@ Makefile
 moc_*.cpp
 *.o
 map-bin
+bigworld.csv
