@@ -1,4 +1,4 @@
-QT = core gui
+QT = core gui widgets
 TEMPLATE = app
 TARGET = map-bin
 
