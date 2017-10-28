@@ -173,16 +173,12 @@ bool ShapeLoader::readRecord(QTextStream &stream, double &lat, double &lon,
 //        myWarning() << "Error parsing lattitude" << list[2];
         return false;
     }
-    id = list[7].toUInt(&ok);
+    id = list[5].toUInt(&ok);
     if (!ok) {
 //        myWarning() << "Error parsing id" << list[7];
         return false;
     }
-    idAux = list[8].toUInt(&ok);
-    if (!ok) {
-//        myWarning() << "Error parsing idAux" << list[8];
-        return false;
-    }
-    name = list[15];
+    idAux = id;
+    name = list[6];
     return true;
 }
