@@ -14,6 +14,8 @@
 int main (int argc, char* argv[]) {
     QApplication app(argc, argv);
 
+    srand48(time(0));
+
     GeoModel* model = new GeoModel();
 
     const double phi = M_PI / 3; // 60° Санкт-Петербург
