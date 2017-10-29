@@ -522,34 +522,39 @@ void GeoView::onDataRolesChanged(const QModelIndex &index, const QList<int> &rol
     bool hasText = roles.contains(TextRole);
     if (hasContour) {
         deleteList(index, ContourPolygonRole);
-        QPolygonF polygon
-            = itemData[ContourPolygonRole].value<QPolygonF>();
-        if (polygon.size() < 2) {
-            qWarning() << "GeoView::onDataChanged: contour size < 2";
-        } else {
-            QColor color = itemData[ContourColorRole].value<QColor>();
-            float lineWidth = value<float>(itemData[LineWidthRole], 1.0);
-            int level = itemData[ContourLevelRole].toInt();
-            bool isSelectable = itemData[IsContourSelectableRole].toBool();
-            int listNum;
-            drawPolygon(polygon, color, lineWidth, false, listNum);
-            appendList(level, listNum, index, ContourColorRole, isSelectable, enabled);
-//            updateGL();
+        QList<QPolygonF> polygons
+            = itemData[ContourPolygonRole].value<QList<QPolygonF> >();
+        foreach (QPolygonF polygon, polygons) {
+            if (polygon.size() < 2) {
+                qWarning() << "GeoView::onDataChanged: contour size < 2";
+            } else {
+                QColor color = itemData[ContourColorRole].value<QColor>();
+                float lineWidth = value<float>(itemData[LineWidthRole], 1.0);
+                int level = itemData[ContourLevelRole].toInt();
+                bool isSelectable = itemData[IsContourSelectableRole].toBool();
+                int listNum;
+                drawPolygon(polygon, color, lineWidth, false, listNum);
+                appendList(level, listNum, index, ContourColorRole, isSelectable, enabled);
+//              updateGL();
+            }
         }
     }
     if (hasArea) {
         deleteList(index, AreaPolygonRole);
-        QPolygonF polygon = itemData[AreaPolygonRole].value<QPolygonF>();
-        if (polygon.size() < 3) {
-            qWarning() << "GeoView::onDataChanged: area size < 3";
-        } else {
-            QColor color = itemData[AreaColorRole].value<QColor>();
-            int level = itemData[AreaLevelRole].toInt();
-            bool isSelectable = itemData[IsAreaSelectableRole].toBool();
-            int listNum;
-            drawPolygon(polygon, color, 0, true, listNum);
-            appendList(level, listNum, index, AreaPolygonRole, isSelectable, enabled);
-//            updateGL();
+        QList<QPolygonF> polygons
+            = itemData[AreaPolygonRole].value<QList<QPolygonF> >();
+        foreach (QPolygonF polygon, polygons) {
+            if (polygon.size() < 3) {
+                qWarning() << "GeoView::onDataChanged: area size < 3";
+            } else {
+                QColor color = itemData[AreaColorRole].value<QColor>();
+                int level = itemData[AreaLevelRole].toInt();
+                bool isSelectable = itemData[IsAreaSelectableRole].toBool();
+                int listNum;
+                drawPolygon(polygon, color, 0, true, listNum);
+                appendList(level, listNum, index, AreaPolygonRole, isSelectable, enabled);
+//              updateGL();
+            }
         }
     }
     if (hasRoute) {
