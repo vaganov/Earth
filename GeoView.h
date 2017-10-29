@@ -21,7 +21,7 @@ private:
     QHash<int, QModelIndex> hashIdIndex;
 
     static const double min_scale = 0.001;
-    static const double max_scale = 0.5;
+    static const double max_scale = 1;
     double phiCenter;
     double psiCenter;
     double scale;
