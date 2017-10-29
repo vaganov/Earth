@@ -37,6 +37,9 @@ int main (int argc, char* argv[]) {
     tree->setWindowTitle("QTreeView");
     tree->setModel(model);
 
+    QObject::connect(tree, SIGNAL(clicked(const QModelIndex&)),
+            model, SLOT(toggle(const QModelIndex&)));
+
     AbstractPainter *painter = new DefaultPainter(model);
 
     ShapeLoader shapeLoader("bigworld.csv", model, painter);
