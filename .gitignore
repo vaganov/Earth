@@ -2,5 +2,6 @@
 Makefile
 moc_*.cpp
 *.o
+libsphere.a
 map-bin
 bigworld.csv
