@@ -1,4 +1,4 @@
-#define WITH_STL 0
+#define WITH_STL 1
 
 #include <stdlib.h>
 #include <pthread.h>
