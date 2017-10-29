@@ -59,7 +59,7 @@ bool ShapeLoader::load() {
                 continue;
             }
 
-            QPointF point(lat, lon);
+            QPointF point(M_PI * lat / 180, M_PI * lon / 180);
             borders[name][id][repeatCounter].append(point);
 /*            if (id2 == 99999) {
                 if (repeatCounter) {
@@ -98,7 +98,7 @@ bool ShapeLoader::load() {
         }
         QVariant variant;
         variant.setValue< QList<QPolygonF> >(list);
-        model->setData(idx2, variant, ContourPolygonRole);
+        model->setData(idx2, variant, AreaPolygonRole);
     }
 /*
     QModelIndex idx2 = model->addRow(idx1);
